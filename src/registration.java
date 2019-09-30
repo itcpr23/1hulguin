@@ -22,7 +22,7 @@ public class registration {
     try{
         Class.forName("com.mysql.jdbc.Driver");
         Connection conn = (Connection) DriverManager.getConnection(con.url, con.username, con.password);
-        String sql = "insert into juve values(null,?,md5(?),?,?)";
+        String sql = "insert into juve values(?,md5(?),?,?,null)";
             PreparedStatement pstmt = (PreparedStatement) conn.prepareStatement(sql);
             
             pstmt.setString(1, username);
